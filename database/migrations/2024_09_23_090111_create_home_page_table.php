@@ -1,0 +1,33 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration{
+
+    public function up(): void{
+        Schema::create('home_page', function (Blueprint $table) {
+            $table->id();
+            $table->longText('heading')->nullable();
+            $table->text('pre_heading')->nullable();
+            $table->longText('description')->nullable();
+            $table->text('image')->nullable();
+            $table->text('button_name')->nullable();
+            $table->text('button_link')->nullable();
+            $table->longText('product_heading')->nullable();
+            $table->text('product_pre_heading')->nullable();
+            $table->longText('infra_heading')->nullable();
+            $table->text('infra_pre_heading')->nullable();
+            $table->text('infra_image')->nullable();
+            $table->longText('page_title')->nullable();
+            $table->longText('seo_title')->nullable();
+            $table->longText('seo_description')->nullable();
+            $table->timestamps();
+        });
+    }
+
+    public function down(): void{
+        Schema::dropIfExists('home_page');
+    }
+};
